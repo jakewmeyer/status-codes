@@ -10,6 +10,7 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o statuscod
 
 # Small final image
 FROM alpine:latest
+LABEL org.opencontainers.image.source https://github.com/jakewmeyer/status-codes
 LABEL maintainer="jakewmeyer@gmail.com"
 ENV GO_ENV=production
 EXPOSE 7000
